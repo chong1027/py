@@ -14,13 +14,9 @@ Str=""
 tim=0
 i=0
 for i in range(1,int(10**100)): 
-    #if(reMR!=None and relo!=None):driver.get(F"https://www.taiwan.net.tw/m1.aspx?sNo=0020118&keyString=%5e{relo}%5e{reMR}&page={i}")
-    #elif(reMR==None and relo!=None):driver.get(F"https://www.taiwan.net.tw/m1.aspx?sNo=0020118&keyString=%5e{relo}%5e&page={i}")
-    #elif(relo==None and reMR!=None):driver.get(F"https://www.taiwan.net.tw/m1.aspx?sNo=0020118&keyString=%5e%5e{reMR}&page={i}")
-    #else: driver.get(F"https://www.taiwan.net.tw/m1.aspx?sNo=0020118&keyString=%5e%5e&page={i}")#https://www.taiwan.net.tw/m1.aspx?sNo=0020118&keyString=%5e%5e
-    driver.get(F"https://www.taiwan.net.tw/m1.aspx?sNo=0020118&keyString=%5e{relo}%5e{reMR}&page={i}")#
+    driver.get(F"https://www.taiwan.net.tw/m1.aspx?sNo=0020118&keyString=%5e{relo}%5e{reMR}&page={i}")#開啟網頁i為頁數relo=地區reMR=認證
     time.sleep(0.5)
-    if(driver.find_elements(By.CLASS_NAME,"error-title")):
+    if(driver.find_elements(By.CLASS_NAME,"error-title")):#如果跳出錯誤代表沒有資料不再檢查
          break
     if(driver.find_elements(By.CLASS_NAME,"name")):
         tags = driver.find_elements(By.CLASS_NAME,"name")
